@@ -1,6 +1,6 @@
 <template>
   <div id="Items">
-      <h3>All items</h3>
+    <h3>All items</h3>
   </div>
 </template>
 
@@ -11,11 +11,9 @@ export default {
 };
 </script>
 
-
 <style scoped>
-
-#Items{
-    text-align: center;
-    padding-top: 50px;
+#Items {
+  text-align: center;
+  padding-top: 50px;
 }
 </style>
