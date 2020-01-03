@@ -25,6 +25,7 @@ export default {
   data() {
     return {
       showAdd: false,
+      added: 0,
       TodoItem:{
           item: '',
           completed: false,
@@ -38,14 +39,17 @@ export default {
 
     addItem: function() {
         this.$http.post('https://todo-app-a7a17.firebaseio.com/todoList.json', this.TodoItem).then(function(data){
-            console.log("Data SENT")
             console.log(data);
         });
 
         //To reset input back to empty
         this.TodoItem.item = '';
+        this.$emit('ItemAdded',this.added);
 
     }
+
+
+
   }
 };
 </script>

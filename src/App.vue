@@ -1,12 +1,14 @@
 <template>
   <div id="app">
     <app-Home></app-Home>
-    <app-NavBar></app-NavBar>
-    <app-showItems></app-showItems>
+    <app-NavBar v-on:ItemAdded="updateList($event)"></app-NavBar>
+    <app-showItems v-bind:items="items"></app-showItems>
   </div>
 </template>
 
 <script>
+/* eslint-disable no-console */
+
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import ShowItems from "./components/showItems";
@@ -19,10 +21,15 @@ export default {
   },
   data() {
     return{
-      
+      items: 0,
     }
   },
-  methods: {}
+  methods: {
+    updateList: function(){
+      this.items = this.items + 1;
+      //console.log("Items:" + this.items)
+    }
+  }
 };
 </script>
 

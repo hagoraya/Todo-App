@@ -2,9 +2,9 @@
   <div id="Items">
     <h3>All items</h3>
     <p>All todos</p>
-  <div v-for="todo in Todos" v-bind:key="todo.id">
+    <div v-for="todo in Todos" v-bind:key="todo.id">
       <article>{{todo.item}}</article>
-  </div>
+    </div>
   </div>
 </template>
 
@@ -12,19 +12,34 @@
 /* eslint-disable no-console */
 
 export default {
-  data() {
-    return {
-      Todos: [],
+  props: {
+    items: {
+      type: Number
     }
   },
-  methods: {},
-  created () {
-    this.$http.get('https://todo-app-a7a17.firebaseio.com/todoList.json').then(function(data){
-      this.Todos = data.body;
-      console.log("DATA GET");
-      console.log(data);
-    })
+  data() {
+    return {
+      Todos: []
+    };
   },
+  methods: {
+    updateList: function() {
+      this.$http
+        .get("https://todo-app-a7a17.firebaseio.com/todoList.json")
+        .then(function(data) {
+          this.Todos = data.body;
+          console.log("Showitems: " + this.items);
+        });
+    }
+  },
+  created() {
+    this.updateList(this.val);
+  },
+  watch: {
+    items: function(val) {
+      this.updateList(val);
+    }
+  }
 };
 </script>
 
