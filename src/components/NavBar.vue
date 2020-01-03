@@ -38,6 +38,7 @@ export default {
 
     addItem: function() {
         this.$http.post('https://todo-app-a7a17.firebaseio.com/todoList.json', this.TodoItem).then(function(data){
+            console.log("Data SENT")
             console.log(data);
         });
 
