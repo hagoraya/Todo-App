@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <app-Home></app-Home>
-    <app-NavBar v-on:ItemAdded="updateList($event)"></app-NavBar>
-    <app-showItems v-bind:items="items"></app-showItems>
+    <app-NavBar></app-NavBar>
+    <app-showItems></app-showItems>
   </div>
 </template>
 
@@ -20,15 +20,10 @@ export default {
     "app-showItems": ShowItems
   },
   data() {
-    return{
-      items: 0,
-    }
+    return{    }
   },
   methods: {
-    updateList: function(){
-      this.items = this.items + 1;
-      //console.log("Items:" + this.items)
-    }
+    
   }
 };
 </script>

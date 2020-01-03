@@ -11,6 +11,8 @@
 <script>
 /* eslint-disable no-console */
 
+import {bus} from '../main';
+
 export default {
   props: {
     items: {
@@ -34,12 +36,12 @@ export default {
   },
   created() {
     this.updateList(this.val);
+    bus.$on('itemAdded', (data) => {
+      this.items = data;
+      this.updateList();
+    })
   },
-  watch: {
-    items: function(val) {
-      this.updateList(val);
-    }
-  }
+
 };
 </script>
 
