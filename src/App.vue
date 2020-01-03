@@ -17,7 +17,11 @@ export default {
     "app-NavBar": NavBar,
     "app-showItems": ShowItems
   },
-  data() {},
+  data() {
+    return{
+      
+    }
+  },
   methods: {}
 };
 </script>

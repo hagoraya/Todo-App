@@ -7,10 +7,10 @@
           <b-nav-item>Completed</b-nav-item>
           <b-nav-item v-on:click="showAddButton">Add Item</b-nav-item>
 
-          <b-card-body v-show="showAdd" class="text-center">
-            <b-card-text>Add a new ToDo item</b-card-text>
-
-            <b-button variant="primary">Add</b-button>
+          <b-card-body id="addButtonWindow" v-show="showAdd" class="text-center" align="center">
+              <b-form-input id="todoInput" v-model="TodoItem.item" placeholder="I want to do..."></b-form-input>
+            <b-button id="addButton" v-on:click="addItem" variant="primary">Add</b-button>
+            <p>{{TodoItem.item}}</p>
           </b-card-body>
         </b-nav>
       </b-card-header>
@@ -19,22 +19,47 @@
 </template>
 
 <script>
-      /* eslint-disable no-console */
+/* eslint-disable no-console */
 
 export default {
-  data () {
-      return{
-           showAdd: false
-      }
-     
+  data() {
+    return {
+      showAdd: false,
+      TodoItem:{
+          item: '',
+          completed: false,
+      },
+    };
   },
   methods: {
     showAddButton: function() {
-      console.log("Adding new item!:" + this.showAdd);
       this.showAdd = !this.showAdd;
+    },
+
+    addItem: function() {
+        this.$http.post('https://todo-app-a7a17.firebaseio.com/todoList.json', this.TodoItem).then(function(data){
+            console.log(data);
+        });
+
+        //To reset input back to empty
+        this.TodoItem.item = '';
+
     }
   }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.addButtonWindow {
+  padding: 50px;
+}
+.addButton{
+    padding-top: 50px;
+    
+}
+
+.todoInput{
+    padding-bottom: 50px;
+}
+
+</style>
