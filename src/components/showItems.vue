@@ -30,17 +30,25 @@ export default {
         .get("https://todo-app-a7a17.firebaseio.com/todoList.json")
         .then(function(data) {
           this.Todos = data.body;
-          console.log("Showitems: " + this.items);
+          console.log("Updating list!");
         });
+
     }
   },
   created() {
     this.updateList(this.val);
-    bus.$on('itemAdded', (data) => {
-      this.items = data;
+    bus.$on('itemAdded', () => {
+      console.log("Event caught");
+      this.updateList();
       this.updateList();
     })
   },
+
+  watch:{
+    getNewData(){
+      this.items = this.getNewData;
+    }
+  }
 
 };
 </script>

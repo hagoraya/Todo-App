@@ -9,7 +9,7 @@
 
           <b-card-body id="addButtonWindow" v-show="showAdd" class="text-center" align="center">
             <b-form-input id="todoInput" v-model="TodoItem.item" placeholder="I want to do..."></b-form-input>
-            <b-button id="addButton" v-on:click="addItem" variant="primary">Add</b-button>
+            <b-button id="addButton" v-on:click="addItem" variant="primary" ref="addButton">Add</b-button>
             <p>{{TodoItem.item}}</p>
           </b-card-body>
         </b-nav>
@@ -51,9 +51,8 @@ export default {
 
       //To reset input back to empty
       this.TodoItem.item = "";
-      //this.$emit('ItemAdded',this.added);
       this.added = this.added + 1;
-      bus.$emit('itemAdded', this.added);
+      bus.$emit('itemAdded');
 
     }
   }
