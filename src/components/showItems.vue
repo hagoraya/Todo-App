@@ -1,7 +1,6 @@
 <template>
   <div id="Items">
-    <h3>All items</h3>
-    <p>All todos</p>
+    <h3>All Todos</h3>
     <div v-for="todo in Todos" v-bind:key="todo.id">
       <article>{{todo.item}}</article>
     </div>
@@ -40,7 +39,6 @@ export default {
     bus.$on('itemAdded', () => {
       console.log("Event caught");
       this.updateList();
-      this.updateList();
     })
   },
 
@@ -56,6 +54,5 @@ export default {
 <style scoped>
 #Items {
   text-align: center;
-  padding-top: 50px;
 }
 </style>

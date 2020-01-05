@@ -1,20 +1,14 @@
 <template>
   <div>
-    <b-card title="Card Title" no-body>
-      <b-card-header header-tag="nav">
-        <b-nav card-header tabs align="center">
-          <b-nav-item active>Active</b-nav-item>
-          <b-nav-item>Completed</b-nav-item>
-          <b-nav-item v-on:click="showAddButton">Add Item</b-nav-item>
+  <div>
+    <b-form>
+        <b-form-group id="form-table" label="Todo:" description="Add an todo item">
+        <b-form-input required placeholder="..." v-model="TodoItem.item"></b-form-input>
+        </b-form-group>
+        <b-button type="submit" variant="primary" v-on:click="addItem">Submit</b-button>
+    </b-form>
+  </div>
 
-          <b-card-body id="addButtonWindow" v-show="showAdd" class="text-center" align="center">
-            <b-form-input id="todoInput" v-model="TodoItem.item" placeholder="I want to do..."></b-form-input>
-            <b-button id="addButton" v-on:click="addItem" variant="primary" ref="addButton">Add</b-button>
-            <p>{{TodoItem.item}}</p>
-          </b-card-body>
-        </b-nav>
-      </b-card-header>
-    </b-card>
   </div>
 </template>
 
@@ -60,14 +54,6 @@ export default {
 </script>
 
 <style scoped>
-.addButtonWindow {
-  padding: 50px;
-}
-.addButton {
-  padding-top: 50px;
-}
-
-.todoInput {
-  padding-bottom: 50px;
+#form-table{
 }
 </style>
