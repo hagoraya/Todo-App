@@ -28,19 +28,12 @@ export default {
 };
 </script>
 
-<style >
-
-body{
-  height: 100%;
-}
-
+<style scoped >
 
 #background{
     background: linear-gradient(to right, #7F7FD5, #86A8E7,#91EAE4);
     background-repeat: no-repeat;
-    background-size: auto;
-    min-width: 100vh;
-    display: flex;
+    height: 100%;
 }
 
 
