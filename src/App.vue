@@ -46,7 +46,10 @@ export default {
 }
 
 #nav {
-  width: 45%;
+  position: absolute;
+  top: 10%;
+  left: 35%;
+  width: 30%;
   height: 200px;
   border: 2px;
   border-radius: 5px;
@@ -57,7 +60,10 @@ export default {
 }
 
 #items {
-  margin-left: 50%;
+  position: absolute;
+  top: 33%;
+  left: 35%;
+  width: 30%;
   height: auto;
   border: 2px ;
   background: whitesmoke;
