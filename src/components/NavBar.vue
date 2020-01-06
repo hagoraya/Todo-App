@@ -1,9 +1,9 @@
 <template>
   <div>
   <div>
-    <b-form>
+    <b-form id="form">
         <b-form-group id="form-table" label="Todo:" description="Add an todo item">
-        <b-form-input required placeholder="..." v-model="TodoItem.item"></b-form-input>
+        <b-form-input  required placeholder="Your new TODO" v-model="TodoItem.item"></b-form-input>
         </b-form-group>
         <b-button type="submit" variant="primary" v-on:click="addItem">Submit</b-button>
     </b-form>
@@ -54,6 +54,9 @@ export default {
 </script>
 
 <style scoped>
-#form-table{
+
+#form{
+  padding: 5px;
 }
+
 </style>

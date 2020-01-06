@@ -48,16 +48,22 @@ export default {
 #nav {
   width: 45%;
   height: 200px;
-  border: 2px solid;
+  border: 2px;
+  border-radius: 5px;
   background: whitesmoke;
+  box-shadow: 0 0 10px #2c3e50;
+
   float: left;
 }
 
 #items {
   margin-left: 50%;
   height: auto;
-  border: 2px solid;
+  border: 2px ;
   background: whitesmoke;
+  box-shadow: 0 0 10px #2c3e50;
+  border-radius: 5px;
+
 
 }
 </style>
