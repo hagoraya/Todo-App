@@ -50,7 +50,7 @@ export default {
   top: 10%;
   left: 35%;
   width: 30%;
-  height: 200px;
+  height: auto;
   border: 2px;
   border-radius: 5px;
   background: whitesmoke;
@@ -61,13 +61,12 @@ export default {
 
 #items {
   position: absolute;
-  top: 33%;
+  top: 23%;
   left: 35%;
   width: 30%;
   height: auto;
   border: 2px ;
-  background: whitesmoke;
-  box-shadow: 0 0 10px #2c3e50;
+ /* box-shadow: 0 0 10px #2c3e50; */
   border-radius: 5px;
 
 
